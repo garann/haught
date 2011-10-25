@@ -3,11 +3,11 @@
 
 hey there, {{= username}}!
 <br/><br/>
-Your repos: 
-{{each repos}}
+Issues in repo: {{= repo}}
+{{each issues}}
 <p>
-	<a href="{{= $value.url}}">{{= $value.name}}</a><br/>
-	{{= $value.description}}
+	<a href="{{= $value.url}}">{{= $value.title}}</a><br/>
+	<b>{{= $value.state}}</b>
 </p>
 {{/each}}
 <div id="kanban">
@@ -23,4 +23,15 @@ Your repos:
 	
 	{{/each}}
 
+</div>
+
+<div>
+	<h2>new issue</h2>
+	<label>title: <input type="text" id="txtTitle" /></label>
+	<label>body: <textarea id="txtBody"></textarea></label>
+	<label>state: <select id="selState">
+					<option value="design">design</option>
+					<option value="development">development</option>
+					<option value="test">test</option>
+	</label>
 </div>

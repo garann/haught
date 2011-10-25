@@ -1,0 +1,27 @@
+<h1>Project name</h1>
+
+
+hey there, {{= username}}!
+<br/><br/>
+Your repos: 
+{{each repos}}
+<p>
+	<a href="{{= $value.url}}">{{= $value.name}}</a><br/>
+	{{= $value.description}}<br/>
+	<a href="/board/{{= $value.owner.login}}/{{= $value.name}}">go to board</a>
+</p>
+{{/each}}
+<div id="kanban">
+
+	{{each states}}
+	
+		<div class="kstate" id="k{{= $value}}">
+			<h2>{{= $value}}</h2>
+			
+			
+			
+		</div>
+	
+	{{/each}}
+
+</div>
